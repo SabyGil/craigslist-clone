@@ -298,6 +298,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var bgImg = {
+  backgroundImage: 'url(' + 'https://www.mclarenboston.com/galleria_images/329/329_main_l.jpg' + ')'
+};
+
 var Details = function (_Component) {
   _inherits(Details, _Component);
 
@@ -321,8 +325,225 @@ var Details = function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'container' },
-          'this item is ',
-          match.params.item
+          _react2.default.createElement(
+            'div',
+            { className: 'white-box' },
+            _react2.default.createElement(
+              'section',
+              { className: 'sub-menu' },
+              _react2.default.createElement(
+                'div',
+                { className: 'direction' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', className: 'prev' },
+                  'Prev'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', className: 'next' },
+                  'Next'
+                )
+              ),
+              _react2.default.createElement(
+                'nav',
+                { className: 'sub-links' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#' },
+                  'More Ads by User'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#' },
+                  'Print'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#' },
+                  'Share'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#' },
+                  'Contact Seller'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'section',
+              { className: 'content-area' },
+              _react2.default.createElement(
+                'div',
+                { className: 'media-column' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'gallery' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'slider' },
+                    _react2.default.createElement(
+                      'div',
+                      { className: 'main-image' },
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'arrows left-arrow' },
+                        '<'
+                      ),
+                      _react2.default.createElement(
+                        'div',
+                        { className: 'arrows right-arrow' },
+                        '>'
+                      ),
+                      _react2.default.createElement('div', { className: 'image-1', style: bgImg })
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'thumbnails' },
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
+                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg })
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'details-column' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'date' },
+                  'Posted: Feb 28th'
+                ),
+                _react2.default.createElement(
+                  'h3',
+                  { className: 'title' },
+                  'Black 2016 BMW'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  { className: 'price' },
+                  '4600'
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'more-details' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'info' },
+                    _react2.default.createElement(
+                      'label',
+                      null,
+                      'win'
+                    ),
+                    _react2.default.createElement(
+                      'h5',
+                      null,
+                      'loream ipsum'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'info' },
+                    _react2.default.createElement(
+                      'label',
+                      null,
+                      'mileage'
+                    ),
+                    _react2.default.createElement(
+                      'h5',
+                      null,
+                      'loream ipsum'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'info' },
+                    _react2.default.createElement(
+                      'label',
+                      null,
+                      'transmission'
+                    ),
+                    _react2.default.createElement(
+                      'h5',
+                      null,
+                      'manual'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'info' },
+                    _react2.default.createElement(
+                      'label',
+                      null,
+                      'win'
+                    ),
+                    _react2.default.createElement(
+                      'h5',
+                      null,
+                      'loream ipsum'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'info' },
+                    _react2.default.createElement(
+                      'label',
+                      null,
+                      'mileage'
+                    ),
+                    _react2.default.createElement(
+                      'h5',
+                      null,
+                      'loream ipsum'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'info' },
+                    _react2.default.createElement(
+                      'label',
+                      null,
+                      'transmission'
+                    ),
+                    _react2.default.createElement(
+                      'h5',
+                      null,
+                      'manual'
+                    )
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'description' },
+                  _react2.default.createElement(
+                    'label',
+                    null,
+                    'description'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad menipsum.'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad menipsum.'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.um dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad menipsum.'
+                  )
+                )
+              )
+            )
+          )
         )
       );
     }
