@@ -1,8 +1,8 @@
 import React, { Component} from 'react'
-
-const bgImg = {
-  backgroundImage: `url(${'https://www.mclarenboston.com/galleria_images/329/329_main_l.jpg'})`
-};
+import Gallery from './components/Gallery';
+// const bgImg = {
+//   backgroundImage: `url(${'https://www.mclarenboston.com/galleria_images/329/329_main_l.jpg'})`
+// };
 
 export default class Details extends Component {
   render () {
@@ -27,24 +27,7 @@ export default class Details extends Component {
 
             <section className='content-area'>
               <div className='media-column'>
-                <div className='gallery'>
-                  <div className='slider'>
-                    <div className='main-image'>
-                      <div className='arrows left-arrow'>{'<'}</div>
-                      <div className='arrows right-arrow'>{'>'}</div>
-                      <div className='image-1' style={ bgImg }></div>
-                    </div>
-                  </div>
-                  <div className='thumbnails'>
-                    <div className='thumb-image' style={ bgImg }></div>
-                    <div className='thumb-image' style={ bgImg }></div>
-                    <div className='thumb-image' style={ bgImg }></div>
-                    <div className='thumb-image' style={ bgImg }></div>
-                    <div className='thumb-image' style={ bgImg }></div>
-                    <div className='thumb-image' style={ bgImg }></div>
-                    <div className='thumb-image' style={ bgImg }></div>
-                  </div>
-                </div>
+                <Gallery />
               </div>
               <div className='details-column'>
                 <div className='date'>Posted: Feb 28th</div>

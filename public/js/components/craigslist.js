@@ -36,7 +36,7 @@ var _Details = __webpack_require__(121);
 
 var _Details2 = _interopRequireDefault(_Details);
 
-var _reactRouterDom = __webpack_require__(243);
+var _reactRouterDom = __webpack_require__(244);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -290,6 +290,10 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Gallery = __webpack_require__(124);
+
+var _Gallery2 = _interopRequireDefault(_Gallery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -298,9 +302,9 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var bgImg = {
-  backgroundImage: 'url(' + 'https://www.mclarenboston.com/galleria_images/329/329_main_l.jpg' + ')'
-};
+// const bgImg = {
+//   backgroundImage: `url(${'https://www.mclarenboston.com/galleria_images/329/329_main_l.jpg'})`
+// };
 
 var Details = function (_Component) {
   _inherits(Details, _Component);
@@ -376,40 +380,7 @@ var Details = function (_Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'media-column' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'gallery' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'slider' },
-                    _react2.default.createElement(
-                      'div',
-                      { className: 'main-image' },
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'arrows left-arrow' },
-                        '<'
-                      ),
-                      _react2.default.createElement(
-                        'div',
-                        { className: 'arrows right-arrow' },
-                        '>'
-                      ),
-                      _react2.default.createElement('div', { className: 'image-1', style: bgImg })
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'thumbnails' },
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg }),
-                    _react2.default.createElement('div', { className: 'thumb-image', style: bgImg })
-                  )
-                )
+                _react2.default.createElement(_Gallery2.default, null)
               ),
               _react2.default.createElement(
                 'div',
@@ -973,6 +944,130 @@ var Listings = function (_Component) {
 }(_react.Component);
 
 exports.default = Listings;
+
+/***/ }),
+
+/***/ 124:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var bgImg = {
+  backgroundImage: 'url(' + 'https://images.craigslist.org/00I0I_lc2pBi5qCP5_50x50c.jpg' + ')'
+};
+
+var Gallery = function (_Component) {
+  _inherits(Gallery, _Component);
+
+  function Gallery() {
+    _classCallCheck(this, Gallery);
+
+    var _this = _possibleConstructorReturn(this, (Gallery.__proto__ || Object.getPrototypeOf(Gallery)).call(this));
+
+    _this.loopImages = function () {
+      return _this.state.allImgs.map(function (img, i) {
+        return _react2.default.createElement('div', { key: i, className: 'thumb-image', style: {
+            "backgroundImage": 'url(\'' + img + '\')'
+          } });
+      });
+    };
+
+    _this.nextBtn = function () {
+      _this.setState({
+        currentIndex: _this.state.currentIndex + 1
+      });
+    };
+
+    _this.prevBtn = function () {
+      _this.setState({
+        currentIndex: _this.state.currentIndex - 1
+      });
+    };
+
+    _this.state = {
+      allImgs: '',
+      currentImg: '',
+      currentIndex: 0
+    };
+    return _this;
+  }
+
+  _createClass(Gallery, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var allImgs = ['https://images.craigslist.org/00I0I_lc2pBi5qCP5_50x50c.jpg', 'https://images.craigslist.org/00r0r_cVTZJAGeGO8_600x450.jpg', 'https://images.craigslist.org/00n0n_9y2AA8gJS8P_600x450.jpg', 'https://images.craigslist.org/01212_8y7exdcjl0M_600x450.jpg', 'https://images.craigslist.org/00X0X_dRQXeXPqDip_600x450.jpg', 'https://images.craigslist.org/00R0R_aqCHHdXXDW7_600x450.jpg'];
+      this.setState({
+        allImgs: allImgs,
+        currentImg: allImgs[this.state.currentIndex]
+      });
+    }
+
+    //buttons for next & previous
+
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          match = _props.match,
+          location = _props.location,
+          history = _props.history;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'gallery' },
+        _react2.default.createElement(
+          'div',
+          { className: 'slider' },
+          _react2.default.createElement(
+            'div',
+            { className: 'main-image' },
+            _react2.default.createElement(
+              'div',
+              { className: 'arrows left-arrow', onClick: this.prevBtn },
+              '<'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'arrows right-arrow', onClick: this.nextBtn },
+              '>'
+            ),
+            _react2.default.createElement('div', { className: 'image-1', style: {
+                "backgroundImage": 'url(\'' + this.state.allImgs[this.state.currentIndex] + '\')'
+              } })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'thumbnails' },
+          this.loopImages()
+        )
+      );
+    }
+  }]);
+
+  return Gallery;
+}(_react.Component);
+
+exports.default = Gallery;
 
 /***/ })
 
