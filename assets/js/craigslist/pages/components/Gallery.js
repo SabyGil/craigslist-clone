@@ -30,7 +30,7 @@ export default class Gallery extends Component {
   loopImages = () => {
     return this.state.allImgs.map((img, i) => {
       return (
-          <div key={i}className='thumb-image' style={{
+          <div key={i} onClick={this.clickedThumb.bind(null, i)} className='thumb-image' style={{
               "backgroundImage": `url('${img}')`
           }}></div>
       )
@@ -39,13 +39,23 @@ export default class Gallery extends Component {
 
   //buttons for next & previous
   nextBtn = () => {
-    this.setState({
-      currentIndex: this.state.currentIndex + 1
-    })
-  }
+    if(this.state.currentIndex != (this.state.allImgs.length - 1)){
+        this.setState({
+          currentIndex: this.state.currentIndex + 1
+        })
+      }
+    }
   prevBtn = () => {
+    if(this.state.currentIndex != 0){
+      this.setState({
+        currentIndex: this.state.currentIndex - 1
+      })
+    }
+  }
+
+  clickedThumb = (index) => {
     this.setState({
-      currentIndex: this.state.currentIndex - 1
+      currentIndex: index
     })
   }
 
@@ -55,8 +65,8 @@ export default class Gallery extends Component {
       <div className='gallery'>
         <div className='slider'>
           <div className='main-image'>
-            <div className='arrows left-arrow' onClick={this.prevBtn}>{'<'}</div>
-            <div className='arrows right-arrow' onClick={this.nextBtn}>{'>'}</div>
+            <div className='arrows left-arrow' onClick={this.prevBtn}><i className='fas fa-chevron-left'></i></div>
+            <div className='arrows right-arrow' onClick={this.nextBtn}><i className='fas fa-chevron-right'></div>
             <div className='image-1' style={{
               "backgroundImage": `url('${this.state.allImgs[this.state.currentIndex]}')`
             }}></div>
